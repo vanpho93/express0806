@@ -11,8 +11,14 @@ app.get('/', (req, res) => {
 app.get('/trangchu', (req, res) => res.send('Homepage'));
 
 app.get('/info/:id', (req, res) => {
-    const idStudent = req.params.id;
-    res.send('Student info: ' + idStudent);
+    // const id = req.params.id;
+    const { id } = req.params;
+    res.send('Student info: ' + id);
+});
+
+app.get('/show/:firstname/:lastname', (req, res) => {
+    const { firstname, lastname } = req.params;
+    res.send('Xin chao ' + firstname + ' ' + lastname);
 });
 
 //route - router
