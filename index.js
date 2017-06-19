@@ -1,4 +1,5 @@
 const express = require('express');
+const PhepTinh = require('./PhepTinh');
 
 const app = express();
 
@@ -20,6 +21,12 @@ app.get('/show/:firstname/:lastname', (req, res) => {
     const { firstname, lastname } = req.params;
     res.send('Xin chao ' + firstname + ' ' + lastname);
 });
+
+app.get('/tinh/:soA/:soB/:tenPhepTinh', (req, res) => {
+
+});
+
+//https://github.com/vanpho93/oop0806b3
 
 //route - router
 //1 route co the handle nhieu link
