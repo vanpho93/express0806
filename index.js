@@ -9,12 +9,7 @@ app.get('/', (req, res) => res.send('<h1>HELLO</h1>'));
 
 app.get('/trangchu', (req, res) => res.send('Homepage'));
 
-function studentController(req, res) {
-    const { id } = req.params;
-    res.send('Student info: ' + id);
-}
-
-app.get('/info/:id', studentController);
+app.get('/info/:id', require('./controllers/studentController'));
 
 app.get('/show/:firstname/:lastname', require('./controllers/showController'));
 
