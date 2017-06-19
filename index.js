@@ -5,28 +5,20 @@ const app = express();
 
 app.listen(3000);
 
-app.get('/', (req, res) => {
-    res.send('<h1>HELLO</h1>');
-});
+app.get('/', (req, res) => res.send('<h1>HELLO</h1>'));
 
 app.get('/trangchu', (req, res) => res.send('Homepage'));
 
-app.get('/info/:id', (req, res) => {
-    // const id = req.params.id;
+function studentController(req, res) {
     const { id } = req.params;
     res.send('Student info: ' + id);
-});
+}
 
-app.get('/show/:firstname/:lastname', (req, res) => {
-    const { firstname, lastname } = req.params;
-    res.send('Xin chao ' + firstname + ' ' + lastname);
-});
+app.get('/info/:id', studentController);
 
-app.get('/tinh/:soA/:soB/:tenPhepTinh', (req, res) => {
-    const { soA, soB, tenPhepTinh } = req.params;
-    const pt = new PhepTinh(soA, soB, tenPhepTinh);
-    res.send(pt.getResultString()); 
-});
+app.get('/show/:firstname/:lastname', require('./controllers/showController'));
+
+app.get('/tinh/:soA/:soB/:tenPhepTinh', require('./controllers/xuLyPhepTinh'));
 
 //https://github.com/vanpho93/oop0806b3
 
