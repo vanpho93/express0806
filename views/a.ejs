@@ -6,6 +6,10 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
     </head>
     <body>
-        <h1>Xin chao <%= ten %> <%= ho %></h1>
+        <% if (isAdmin) { %>
+            <p>Bang dieu khien: <%= name %></p>
+        <% } else { %>
+            <p>Ban khong phai admin</p>
+        <% } %>
     </body>
 </html>

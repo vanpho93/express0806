@@ -23,9 +23,11 @@ app.get('/show/:firstname/:lastname', require('./controllers/showController'));
 
 app.get('/tinh/:soA/:soB/:tenPhepTinh', require('./controllers/xuLyPhepTinh'));
 
-app.get('/a/:name/:fname', (req, res) => {
-    const { name, fname } = req.params;
-    res.render('a', { ten: name, ho: fname });
+app.get('/a/:username/:password', (req, res) => {
+    const { username, password } = req.params;
+    let isAdmin = false;
+    if (username === 'khoapham' && password === '123') isAdmin = true;
+    res.render('a', { isAdmin, name: username });
 });
 
 //https://github.com/vanpho93/oop0806b3
