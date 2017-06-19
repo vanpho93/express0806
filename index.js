@@ -2,10 +2,12 @@ const express = require('express');
 const PhepTinh = require('./PhepTinh');
 
 const app = express();
+app.set('view engine', 'ejs');
+app.set('views', './views');
 
 app.listen(3000);
 
-app.get('/', (req, res) => res.send('<h1>HELLO</h1>'));
+app.get('/', (req, res) => res.render('home'));
 
 app.get('/trangchu', (req, res) => res.send('Homepage'));
 
