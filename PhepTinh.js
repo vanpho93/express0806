@@ -17,7 +17,7 @@ class PhepTinh {
 
     getResult() {
         switch (this.tenPhepTinh) {
-            case 'CONG': return this.soA + this.soB;
+            case 'CONG': return +this.soA + +this.soB;
             case 'TRU': return this.soA - this.soB;
             case 'NHAN': return this.soA * this.soB;
             default: return this.soA / this.soB;

@@ -23,7 +23,9 @@ app.get('/show/:firstname/:lastname', (req, res) => {
 });
 
 app.get('/tinh/:soA/:soB/:tenPhepTinh', (req, res) => {
-
+    const { soA, soB, tenPhepTinh } = req.params;
+    const pt = new PhepTinh(soA, soB, tenPhepTinh);
+    res.send(pt.getResultString()); 
 });
 
 //https://github.com/vanpho93/oop0806b3
