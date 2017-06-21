@@ -1,5 +1,6 @@
 const express = require('express');
 const PhepTinh = require('./PhepTinh');
+const arrSanPham = require('./SanPham');
 
 const app = express();
 app.set('view engine', 'ejs');
@@ -15,7 +16,7 @@ app.get('/', (req, res) => res.render('home'));
 
 app.get('/royal', (req, res) => res.render('royal'));
 
-app.get('/home', (req, res) => res.render('clothing'));
+app.get('/home', (req, res) => res.render('clothing', { arrSanPham }));
 
 app.get('/trangchu', (req, res) => res.send('Homepage'));
 
