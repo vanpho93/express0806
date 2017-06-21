@@ -34,7 +34,18 @@ app.get('/a/:username/:password', (req, res) => {
 
 app.get('/subjects', (req, res) => res.render('subjects', { arrNames }));
 
-//https://github.com/vanpho93/oop0806b3
+app.get('/phim', (req, res) => res.render('phim', { arrPhim }));
 
-//route - router
-//1 route co the handle nhieu link
+class Phim {
+    constructor(name, idYoutube) {
+        this.name = name;
+        this.idYoutube = idYoutube;
+    }
+}
+
+const arrPhim = [
+    new Phim('[Kỉ LỤC] Olympia 13 - THPT Chuyên Thái Bình', 'SjsaJQZ0XZc'),
+    new Phim('Câu trả lời "bá đạo" nhất trong lịch sử Đường lên đỉnh Olympia', '7d6fRWOebkk'),
+    new Phim('Câu hỏi "nhạy cảm" của Ai là triệu phú gây xôn xao', '4RI0Ab675Ik'),
+    new Phim('Hoi xoay dap xoay so 39', 'dMqYW-gZjO0')
+];
