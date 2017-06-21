@@ -5,6 +5,8 @@ const app = express();
 app.set('view engine', 'ejs');
 app.set('views', './views');
 
+let arrNames = ['NodeJS', 'Android', 'iOS', 'React Native'];
+
 app.use(express.static('./public'));
 
 app.listen(3000);
@@ -29,6 +31,8 @@ app.get('/a/:username/:password', (req, res) => {
     if (username === 'khoapham' && password === '123') isAdmin = true;
     res.render('a', { isAdmin, name: username });
 });
+
+app.get('/subjects', (req, res) => res.render('subjects', { arrNames }));
 
 //https://github.com/vanpho93/oop0806b3
 
